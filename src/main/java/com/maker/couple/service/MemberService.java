@@ -27,13 +27,16 @@ public class MemberService {
         return memberRepository.findById(id).orElseThrow(NoSuchElementException::new);
     }
 
-    public Member save(Member member, IdealType idealType) {
-        Member result = memberRepository.save(member);
-        idealType.setMember(result);
-
-        idealTypeRepository.save(idealType);
-
-        return result;
+//    public Member save(Member member, IdealType idealType) {
+//        Member result = memberRepository.save(member);
+//        idealType.setMember(result);
+//
+//        idealTypeRepository.save(idealType);
+//
+//        return result;
+//    }
+    public Member save(Member member) {
+        return memberRepository.save(member);
     }
 
     public void delete(int id){
